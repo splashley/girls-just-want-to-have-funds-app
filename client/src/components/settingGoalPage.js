@@ -8,18 +8,47 @@ import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 
 const SettingGoalPage = () => {
-  const { userName, setUserName } = React.useContext(UserInfoContext);
+  const {
+    userName,
+    setUserName,
+    allowance,
+    setAllowance,
+    amountToSave,
+    setAmountToSave,
+    goal,
+    setGoal,
+  } = React.useContext(UserInfoContext);
   const history = useHistory();
   return (
     <Wrapper>
       <Logo />
       <SubHeader>SET A SAVINGS GOAL</SubHeader>
       <Questions>HOW MUCH CAN YOU SAVE EVERY WEEK?</Questions>
-      <Input></Input>
+      <Input
+        type="number"
+        placeholder="ex: 15"
+        value={allowance}
+        onChange={(e) => {
+          setAllowance(e.target.value);
+        }}
+      ></Input>
       <Questions>HOW MUCH DO YOU WANT TO SAVE?</Questions>
-      <Input></Input>
+      <Input
+        type="number"
+        placeholder="ex: 80"
+        value={amountToSave}
+        onChange={(e) => {
+          setAmountToSave(e.target.value);
+        }}
+      ></Input>
       <Questions>WHAT ARE YOU SAVING FOR?</Questions>
-      <Input></Input>
+      <Input
+        placeholder="ex: A Video Game"
+        value={goal}
+        onChange={(e) => {
+          setGoal(e.target.value);
+        }}
+      ></Input>
       <ButtonWrapper />
     </Wrapper>
   );
@@ -43,6 +72,10 @@ const Input = styled.input`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+
+  ::placeholder {
+    color: pink;
+  }
 `;
 
 const Questions = styled.div`

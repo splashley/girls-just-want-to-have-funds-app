@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MainButton from "./buttons/mainButton";
 import Logo from "./logo";
 import SubHeader from "./SubHeader";
+import ButtonWrapper from "./buttonWrapper";
 import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 
@@ -19,20 +20,7 @@ const SettingGoalPage = () => {
       <Input></Input>
       <Questions>WHAT ARE YOU SAVING FOR?</Questions>
       <Input></Input>
-      <MainButton
-        onClick={() => {
-          history.push("/??");
-        }}
-      >
-        BACK
-      </MainButton>
-      <MainButton
-        onClick={() => {
-          history.push("/??");
-        }}
-      >
-        NEXT
-      </MainButton>
+      <ButtonWrapper />
     </Wrapper>
   );
 };

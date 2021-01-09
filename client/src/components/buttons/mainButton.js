@@ -17,6 +17,7 @@ const Wrapper = styled.button`
   cursor: pointer;
   transform: scale(1);
   transition: transform 300ms;
+  margin: 0 20px;
 
   :hover {
     transform: scale(1.1);

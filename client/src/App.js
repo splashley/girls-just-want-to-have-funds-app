@@ -7,6 +7,7 @@ import styled from "styled-components/macro";
 import LogoImg from "./components/logo";
 import AvatarImg from "./assets/avatar.png";
 import Page2 from "./components/page2";
+import Page3 from "./components/page3";
 import SettingGoalPage from "./components/settingGoalPage";
 
 function App() {
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/page2">
           <Page2 />
+        </Route>
+        <Route path="/page3">
+          <Page3 />
         </Route>
         <Route path="/settinggoalpage">
           <SettingGoalPage />

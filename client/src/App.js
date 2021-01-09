@@ -4,6 +4,7 @@ import { UserInfoContext } from "./UserInfoContext";
 import GlobalStyles from "./GlobalStyles";
 import MainButton from "./components/buttons/mainButton";
 import styled from "styled-components";
+import Page2 from "./components/page2";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -16,7 +17,7 @@ function App() {
           </Landing>
         </Route>
         <Route path="/page2">
-          <div>page 2</div>
+          <Page2 />
         </Route>
       </Switch>
       <GlobalStyles />

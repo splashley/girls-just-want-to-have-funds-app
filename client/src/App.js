@@ -3,11 +3,12 @@ import React from "react";
 import { UserInfoContext } from "./UserInfoContext";
 import GlobalStyles from "./GlobalStyles";
 import MainButton from "./components/buttons/mainButton";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import LogoImg from "./components/logo";
 import AvatarImg from "./assets/avatar.png";
 import Page2 from "./components/page2";
 import Page3 from "./components/page3";
+import SettingGoalPage from "./components/settingGoalPage";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/page3">
           <Page3 />
+        </Route>
+        <Route path="/settinggoalpage">
+          <SettingGoalPage />
         </Route>
       </Switch>
       <GlobalStyles />

@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import { UserInfoContext } from "./UserInfoContext";
 import GlobalStyles from "./GlobalStyles";
+import MainButton from "./components/buttons/mainButton";
+import styled from "styled-components";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -9,7 +11,9 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <div>Page 1, {test}</div>
+          <Landing>
+            <MainButton>LET'S START !</MainButton>
+          </Landing>
         </Route>
         <Route path="/page2">
           <div>page 2</div>
@@ -19,5 +23,12 @@ function App() {
     </Router>
   );
 }
+
+const Landing = styled.div`
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+`;
 
 export default App;

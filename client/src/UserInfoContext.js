@@ -8,7 +8,7 @@ export const UserInfoContextProvider = ({ children }) => {
   const [test, setTest] = React.useState("testing");
 
   return (
-    <UserInfoContext.Provider value={{ userName, test }}>
+    <UserInfoContext.Provider value={{ userName, test, setUserName }}>
       {children}
     </UserInfoContext.Provider>
   );

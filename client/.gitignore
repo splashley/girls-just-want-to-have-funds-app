@@ -1,6 +1,6 @@
 node_modules/
 *.DS_Store
-
+*.eslintcache
 *.swp
 *.swn
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
@@ -17,12 +17,13 @@ node_modules/
 /build
 
 # misc
+.eslintcache
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-
+.eslintcache
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

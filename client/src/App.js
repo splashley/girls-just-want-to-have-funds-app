@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import { UserInfoContext } from "./UserInfoContext";
 import GlobalStyles from "./GlobalStyles";
+import AvatarProvider from "./components/Avatar/AvatarContext";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path="/page2">
           <div>page 2</div>
+        </Route>
+        <Route path="/avatar">
+          <AvatarProvider />
         </Route>
       </Switch>
       <GlobalStyles />

@@ -7,6 +7,7 @@ import styled from "styled-components";
 import LogoImg from "./components/logo";
 import AvatarImg from "./assets/avatar.png";
 import Page2 from "./components/page2";
+import Page3 from "./components/page3";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/page2">
           <Page2 />
+        </Route>
+        <Route path="/page3">
+          <Page3 />
         </Route>
       </Switch>
       <GlobalStyles />

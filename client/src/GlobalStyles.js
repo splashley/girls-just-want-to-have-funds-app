@@ -4,7 +4,7 @@ import background from "./assets/bg.png";
 const GlobalStyle = createGlobalStyle`
 *{
   box-sizing:border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 body{
   background-image: url(${background});

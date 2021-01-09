@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import { UserInfoContext } from "./UserInfoContext";
 import GlobalStyles from "./GlobalStyles";
+import AvatarProvider from "./components/Avatar/AvatarContext";
 import MainButton from "./components/buttons/mainButton";
 import styled from "styled-components/macro";
 import LogoImg from "./components/logo";
@@ -30,6 +31,9 @@ function App() {
         </Route>
         <Route path="/settinggoalpage">
           <SettingGoalPage />
+        </Route>
+        <Route path="/avatar">
+          <AvatarProvider />
         </Route>
       </Switch>
       <GlobalStyles />

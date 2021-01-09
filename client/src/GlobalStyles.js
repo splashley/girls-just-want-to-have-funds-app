@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
 }
 body{
   background-image: url(${background});
+  background-size: cover;
+
 }
 
 html, body, div, span, applet, object, iframe,

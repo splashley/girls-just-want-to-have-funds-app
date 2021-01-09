@@ -11,18 +11,28 @@ import Page2 from "./components/page2";
 import Page3 from "./components/page3";
 import SettingGoalPage from "./components/settingGoalPage";
 import AboutGoal from "./components/AboutGoal";
+import { useHistory } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
+
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Landing>
+          <LandingPage />
+          {/* <Landing>
             <LogoImg />
             <AvatarSideImg src={AvatarImg} />
-            <MainButton>LET'S START !</MainButton>
-          </Landing>
+            <MainButton
+              onClick={() => {
+                history.push("/page2");
+              }}
+            >
+              LET'S START !
+            </MainButton>
+          </Landing> */}
         </Route>
         <Route path="/page2">
           <Page2 />

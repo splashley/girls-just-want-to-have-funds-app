@@ -3,20 +3,20 @@ import styled from "styled-components";
 import MainButton from "./buttons/mainButton";
 import { useHistory } from "react-router-dom";
 
-const ButtonWrapper = () => {
+const ButtonWrapper = ({ nextLink }) => {
   const history = useHistory();
   return (
     <Wrapper>
       <MainButton
         onClick={() => {
-          history.push("/??");
+          history.goBack();
         }}
       >
         BACK
       </MainButton>
       <MainButton
         onClick={() => {
-          history.push("/??");
+          history.push(`${nextLink}`);
         }}
       >
         NEXT

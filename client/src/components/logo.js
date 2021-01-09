@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import LogoImg from "../assets/logo.png";
 
-const Logo = styled.img`
+const LogoWrapper = styled.img`
   padding: 5px;
-  max-width: 150px;
+  max-width: 300px;
 `;
 
 const Logo = () => {
-  return <Logo src={LogoImg} />;
+  return <LogoWrapper src={LogoImg} />;
 };
 
 export default Logo;

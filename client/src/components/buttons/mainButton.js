@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const MainButton = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const MainButton = ({ children, onClick }) => {
+  return <Wrapper onClick={onClick}>{children}</Wrapper>;
 };
 
 const Wrapper = styled.button`

@@ -3,17 +3,12 @@ import styled from "styled-components";
 import SubHeader from "./SubHeader";
 import useStickyState from "../useLocalStorageHook";
 import ButtonWrapper from "./buttonWrapper";
-<<<<<<< HEAD
 import LogoImg from "../components/logo";
 
-const AvatarProvider = () => {
-=======
 import { UserInfoContext } from "../UserInfoContext";
 
 const AvatarProvider = () => {
-  const history = useHistory();
   const { setAvatarUrl } = React.useContext(UserInfoContext);
->>>>>>> parent/main
   //Features useState
   const [topType, setTopType] = useStickyState("LongHairMiaWallace", "topType");
   const [accessoriesType, setAccessoriesType] = useStickyState(

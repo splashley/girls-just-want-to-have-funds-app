@@ -34,10 +34,15 @@ const SavingStatusPage = () => {
         </HowMuchDivRight>
       </HowMuchDiv>
       <ButtonsDiv>
-        <DepositInput></DepositInput>
-        <DepositButton>DEPOSIT</DepositButton>
-        <WithdrawInput></WithdrawInput>
-        <WithdrawButton>WITHDRAW</WithdrawButton>
+        <DepositButton>
+          +
+          <DepositInput placeholder="$0" />
+          DEPOSIT
+        </DepositButton>
+        <WithdrawButton>
+          -<WithdrawInput placeholder="$0" />
+          WITHDRAW
+        </WithdrawButton>
       </ButtonsDiv>
       <TableDiv>
         <Table>
@@ -112,9 +117,8 @@ const DepositInput = styled.input`
   border: none;
   font-weight: 700;
   font-size: 18px;
-  width: 175px;
+  width: 100px;
   padding: 5px;
-  opacity: 0.6;
   margin: 0 10px;
 `;
 
@@ -124,33 +128,32 @@ const WithdrawInput = styled.input`
   border: none;
   font-weight: 700;
   font-size: 18px;
-  width: 175px;
+  width: 100px;
   padding: 5px;
-  opacity: 0.6;
   margin: 0 10px;
 `;
 
 const DepositButton = styled.button`
   background-color: #6ced8c;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   font-weight: 700;
   font-size: 18px;
-  width: 175px;
+  width: 150px;
   padding: 5px;
-  opacity: 0.6;
+  opacity: 0.8;
   margin: 0 10px;
 `;
 
 const WithdrawButton = styled.button`
   background-color: red;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   font-weight: 700;
   font-size: 18px;
-  width: 175px;
+  width: 150px;
   padding: 5px;
-  opacity: 0.6;
+  opacity: 0.8;
   margin: 0 10px;
 `;
 

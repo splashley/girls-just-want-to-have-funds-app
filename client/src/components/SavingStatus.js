@@ -36,8 +36,11 @@ const SavingStatusPage = () => {
       <PiggyWrapper>
         <Piggy src={PiggyImg} />
       </PiggyWrapper>{" "}
-      <ProgressBar value="25" max="100"></ProgressBar>
-      {/* <ProgressBar value={amountsaved/goal*100} max="100"></ProgressBar> */}
+      {/* <ProgressBar value="25" max="100"></ProgressBar> */}
+      <ProgressBar
+        value={(amountsaved / amountToSave) * 100}
+        max="100"
+      ></ProgressBar>
       <HowMuchDiv>
         <HowMuchDivLeft>
           HOW MUCH YOU'VE SAVED<AmountDiv>${amountsaved}</AmountDiv>

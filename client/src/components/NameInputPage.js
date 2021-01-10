@@ -7,7 +7,7 @@ import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 import ButtonWrapper from "./buttonWrapper";
 
-const Page2 = () => {
+const NameInputPage = () => {
   const { userName, setUserName } = React.useContext(UserInfoContext);
   const history = useHistory();
   return (
@@ -20,12 +20,12 @@ const Page2 = () => {
         }}
         value={userName}
       ></Input>
-      <ButtonWrapper nextLink="/page3" />
+      <ButtonWrapper nextLink="/avatar" />
     </Wrapper>
   );
 };
 
-export default Page2;
+export default NameInputPage;
 
 const Wrapper = styled.div`
   display: flex;

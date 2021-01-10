@@ -7,8 +7,8 @@ import MainButton from "./components/buttons/mainButton";
 import styled from "styled-components/macro";
 import LogoImg from "./components/logo";
 import AvatarImg from "./assets/avatar.png";
-import Page2 from "./components/page2";
-import Page3 from "./components/page3";
+import NameInputPage from "./components/NameInputPage";
+import LearnAboutMoneyPage from "./components/LearnAboutMoney";
 import SettingGoalPage from "./components/settingGoalPage";
 import AboutGoal from "./components/AboutGoal";
 import { useHistory } from "react-router-dom";
@@ -22,32 +22,21 @@ function App() {
       <Switch>
         <Route exact path="/">
           <LandingPage />
-          {/* <Landing>
-            <LogoImg />
-            <AvatarSideImg src={AvatarImg} />
-            <MainButton
-              onClick={() => {
-                history.push("/page2");
-              }}
-            >
-              LET'S START !
-            </MainButton>
-          </Landing> */}
         </Route>
-        <Route path="/page2">
-          <Page2 />
+        <Route path="/nameinput">
+          <NameInputPage />
         </Route>
-        <Route path="/page3">
-          <Page3 />
+        <Route path="/avatar">
+          <AvatarProvider />
+        </Route>
+        <Route path="/learnaboutmoney">
+          <LearnAboutMoneyPage />
         </Route>
         <Route path="/settinggoalpage">
           <SettingGoalPage />
         </Route>
-        <Route path="/aboutGoal">
+        <Route path="/aboutgoal">
           <AboutGoal />
-        </Route>
-        <Route path="/avatar">
-          <AvatarProvider />
         </Route>
       </Switch>
       <GlobalStyles />

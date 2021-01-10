@@ -4,21 +4,32 @@ import styled from "styled-components/macro";
 import LogoImg from "../components/logo";
 import AvatarImg from "../assets/avatar.png";
 import { useHistory } from "react-router-dom";
+import { UserInfoContext } from "../UserInfoContext";
 
 const LandingPage = () => {
   const history = useHistory();
-
+  const { hasAccount } = React.useContext(UserInfoContext);
   return (
     <Landing>
       <LogoImg />
       <AvatarSideImg src={AvatarImg} />
-      <MainButton
-        onClick={() => {
-          history.push("/page2");
-        }}
-      >
-        LET'S START !
-      </MainButton>
+      {hasAccount ? (
+        <MainButton
+          onClick={() => {
+            history.push("?????");
+          }}
+        >
+          LET'S GO TO YOUR ACCOUNT
+        </MainButton>
+      ) : (
+        <MainButton
+          onClick={() => {
+            history.push("/nameinput");
+          }}
+        >
+          LET'S START !
+        </MainButton>
+      )}
     </Landing>
   );
 };

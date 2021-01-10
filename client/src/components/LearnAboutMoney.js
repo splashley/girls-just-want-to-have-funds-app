@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import AvatarImg from "../assets/avatar.png";
 import ButtonWrapper from "./buttonWrapper";
 
-const Page3 = () => {
+const LearnAboutMoneyPage = () => {
   const { userName, setUserName } = React.useContext(UserInfoContext);
   const history = useHistory();
   return (
@@ -37,12 +37,12 @@ const Page3 = () => {
           </Bubble>
         </AvatarSection>
       </GridWrapper>
-      <ButtonWrapper />
+      <ButtonWrapper nextLink="/aboutgoal" />
     </Wrapper>
   );
 };
 
-export default Page3;
+export default LearnAboutMoneyPage;
 
 const Wrapper = styled.div`
   display: flex;

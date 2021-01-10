@@ -8,6 +8,7 @@ export const UserInfoContextProvider = ({ children }) => {
   const [allowance, setAllowance] = useStickyState("", "allowance");
   const [amountToSave, setAmountToSave] = useStickyState("", "amountToSave");
   const [goal, setGoal] = useStickyState("", "goal");
+  const [hasAccount, setHasAccount] = useStickyState(false, "hasVisited");
 
   return (
     <UserInfoContext.Provider
@@ -20,6 +21,8 @@ export const UserInfoContextProvider = ({ children }) => {
         setAmountToSave,
         goal,
         setGoal,
+        hasAccount,
+        setHasAccount,
       }}
     >
       {children}

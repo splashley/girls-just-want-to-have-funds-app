@@ -3,9 +3,17 @@ import styled from "styled-components";
 import SubHeader from "./SubHeader";
 import useStickyState from "../useLocalStorageHook";
 import ButtonWrapper from "./buttonWrapper";
+<<<<<<< HEAD
 import LogoImg from "../components/logo";
 
 const AvatarProvider = () => {
+=======
+import { UserInfoContext } from "../UserInfoContext";
+
+const AvatarProvider = () => {
+  const history = useHistory();
+  const { setAvatarUrl } = React.useContext(UserInfoContext);
+>>>>>>> parent/main
   //Features useState
   const [topType, setTopType] = useStickyState("LongHairMiaWallace", "topType");
   const [accessoriesType, setAccessoriesType] = useStickyState(
@@ -29,6 +37,10 @@ const AvatarProvider = () => {
   let baseURL = `https://avataaars.io/?avatarStyle=Circle&topType=${topType}&accessoriesType=${accessoriesType}&hairColor=${hairColor}&facialHairType=Blank&clotheType=${clotheType}&clotheColor=${clotheColor}&eyeType=${eyeType}&eyebrowType=${eyebrowType}&mouthType=${mouthType}&skinColor=${skinColor}`;
 
   const [url, setUrl] = React.useState(baseURL);
+
+  React.useEffect(() => {
+    setAvatarUrl(url);
+  }, [url]);
 
   //Functions to change features
   const changeTopType = (event) => {

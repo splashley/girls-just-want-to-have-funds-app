@@ -16,23 +16,33 @@ const SavingStatusPage = () => {
     setAmountToSave,
     goal,
     setGoal,
+    amountsaved,
+    setAmountSaved,
   } = React.useContext(UserInfoContext);
   const history = useHistory();
+
   return (
     <Wrapper>
       <Logo />
-      <SubHeader>YOUR SAVING STATUS</SubHeader>
+      <SubHeader>{userName.toUpperCase()}'s SAVING STATUS</SubHeader>
       <HowMuchDiv>
         <HowMuchDivLeft>
-          HOW MUCH YOU'VE SAVED<AmountDiv>$400</AmountDiv>
+          HOW MUCH YOU'VE SAVED<AmountDiv>$0</AmountDiv>
         </HowMuchDivLeft>
         <HowMuchDivRight>
-          HOW MUCH IS REMAINING<AmountDiv>$400</AmountDiv>
+          HOW MUCH IS REMAINING<AmountDiv>${amountToSave}</AmountDiv>
         </HowMuchDivRight>
       </HowMuchDiv>
       <ButtonsDiv>
-        <DepositButton>DEPOSIT</DepositButton>
-        <WithdrawButton>WITHDRAW</WithdrawButton>
+        <DepositButton>
+          +
+          <DepositInput placeholder="$0" />
+          DEPOSIT
+        </DepositButton>
+        <WithdrawButton>
+          -<WithdrawInput placeholder="$0" />
+          WITHDRAW
+        </WithdrawButton>
       </ButtonsDiv>
       <TableDiv>
         <Table>
@@ -101,27 +111,49 @@ const ButtonsDiv = styled.div`
   flex-direction: row;
 `;
 
-const DepositButton = styled.button`
-  background-color: #6ced8c;
+const DepositInput = styled.input`
+  background-color: white;
   border-radius: 5px;
   border: none;
   font-weight: 700;
   font-size: 18px;
-  width: 175px;
+  width: 100px;
   padding: 5px;
-  opacity: 0.6;
+  margin: 0 10px;
+`;
+
+const WithdrawInput = styled.input`
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  width: 100px;
+  padding: 5px;
+  margin: 0 10px;
+`;
+
+const DepositButton = styled.button`
+  background-color: #6ced8c;
+  border-radius: 10px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  width: 150px;
+  padding: 5px;
+  opacity: 0.8;
   margin: 0 10px;
 `;
 
 const WithdrawButton = styled.button`
   background-color: red;
-  border-radius: 5px;
+  border-radius: 10px;
   border: none;
   font-weight: 700;
   font-size: 18px;
-  width: 175px;
+  width: 150px;
   padding: 5px;
-  opacity: 0.6;
+  opacity: 0.8;
   margin: 0 10px;
 `;
 

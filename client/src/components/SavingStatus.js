@@ -7,6 +7,7 @@ import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 import dayjs from "dayjs";
 import PiggyImg from "../assets/piggybank.png";
+import { FcOk } from "react-icons/fc";
 
 const SavingStatusPage = () => {
   const {
@@ -29,6 +30,7 @@ const SavingStatusPage = () => {
   console.log("depositAmount", depositAmount);
   const history = useHistory();
   console.log(dayjs().format("YYYY/MM/DD HH:mm"));
+
   return (
     <Wrapper>
       <Logo />
@@ -36,11 +38,15 @@ const SavingStatusPage = () => {
       <PiggyWrapper>
         <Piggy src={PiggyImg} />
       </PiggyWrapper>{" "}
-      {/* <ProgressBar value="25" max="100"></ProgressBar> */}
       <ProgressBar
         value={(amountsaved / amountToSave) * 100}
         max="100"
       ></ProgressBar>
+      {(amountsaved / amountToSave) * 100 >= 100 && (
+        <h2>
+          GOAL COMPLETED! <FcOk size={23} />
+        </h2>
+      )}
       <HowMuchDiv>
         <HowMuchDivLeft>
           HOW MUCH YOU'VE SAVED<AmountDiv>${amountsaved}</AmountDiv>

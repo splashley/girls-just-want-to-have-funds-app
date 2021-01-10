@@ -27,16 +27,23 @@ const SavingStatusPage = () => {
       <SubHeader>{userName.toUpperCase()}'S SAVING STATUS</SubHeader>
       <HowMuchDiv>
         <HowMuchDivLeft>
-          HOW MUCH YOU'VE SAVED<AmountDiv>$0</AmountDiv>
+          HOW MUCH YOU'VE SAVED<AmountDiv>${amountsaved}</AmountDiv>
         </HowMuchDivLeft>
         <HowMuchDivRight>
-          HOW MUCH IS REMAINING<AmountDiv>${amountToSave}</AmountDiv>
+          HOW MUCH IS REMAINING
+          <AmountDiv>${amountToSave - amountsaved}</AmountDiv>
         </HowMuchDivRight>
       </HowMuchDiv>
       <ButtonsDiv>
         <DepositButton>
           +
-          <DepositInput placeholder="$0" />
+          <DepositInput
+            placeholder="$0"
+            value={depositAmount}
+            onChange={(e) => {
+              setDepositAmoun(e.target.value);
+            }}
+          />
           DEPOSIT
         </DepositButton>
         <WithdrawButton>

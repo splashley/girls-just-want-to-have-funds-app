@@ -39,10 +39,10 @@ const SavingStatusPage = () => {
           +
           <DepositInput
             placeholder="$0"
-            value={depositAmount}
-            onChange={(e) => {
-              setDepositAmoun(e.target.value);
-            }}
+            // value={depositAmount}
+            // onChange={(e) => {
+            //   setDepositAmount(e.target.value);
+            // }}
           />
           DEPOSIT
         </DepositButton>

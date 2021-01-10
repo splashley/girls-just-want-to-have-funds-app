@@ -19,6 +19,7 @@ const NameInputPage = () => {
           setUserName(ev.target.value);
         }}
         value={userName}
+        placeholder="Enter your name"
       ></Input>
       <ButtonWrapper nextLink="/avatar" />
     </Wrapper>
@@ -39,7 +40,8 @@ const Input = styled.input`
   border: none;
   border-radius: 8px;
   height: 30px;
-  margin-bottom: 45px;
+  margin: 45px 0;
+  padding: 20px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;

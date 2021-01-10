@@ -8,15 +8,19 @@ import { UserInfoContext } from "../UserInfoContext";
 
 const LandingPage = () => {
   const history = useHistory();
-  const { hasAccount } = React.useContext(UserInfoContext);
+  const { hasAccount, avatarUrl } = React.useContext(UserInfoContext);
   return (
     <Landing>
       <LogoImg />
-      <AvatarSideImg src={AvatarImg} />
+      {hasAccount ? (
+        <AvatarSideImg src={avatarUrl} />
+      ) : (
+        <AvatarSideImg src={AvatarImg} />
+      )}
       {hasAccount ? (
         <MainButton
           onClick={() => {
-            history.push("?????");
+            history.push("/savingstatus");
           }}
         >
           LET'S GO TO YOUR ACCOUNT

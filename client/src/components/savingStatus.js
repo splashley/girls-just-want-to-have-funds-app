@@ -16,22 +16,27 @@ const SavingStatusPage = () => {
     setAmountToSave,
     goal,
     setGoal,
+    amountsaved,
+    setAmountSaved,
   } = React.useContext(UserInfoContext);
   const history = useHistory();
+
   return (
     <Wrapper>
       <Logo />
-      <SubHeader>YOUR SAVING STATUS</SubHeader>
+      <SubHeader>{userName.toUpperCase()}'s SAVING STATUS</SubHeader>
       <HowMuchDiv>
         <HowMuchDivLeft>
-          HOW MUCH YOU'VE SAVED<AmountDiv>$400</AmountDiv>
+          HOW MUCH YOU'VE SAVED<AmountDiv>$0</AmountDiv>
         </HowMuchDivLeft>
         <HowMuchDivRight>
-          HOW MUCH IS REMAINING<AmountDiv>$400</AmountDiv>
+          HOW MUCH IS REMAINING<AmountDiv>${amountToSave}</AmountDiv>
         </HowMuchDivRight>
       </HowMuchDiv>
       <ButtonsDiv>
+        <DepositInput></DepositInput>
         <DepositButton>DEPOSIT</DepositButton>
+        <WithdrawInput></WithdrawInput>
         <WithdrawButton>WITHDRAW</WithdrawButton>
       </ButtonsDiv>
       <TableDiv>
@@ -99,6 +104,30 @@ const AmountDiv = styled.div`
 const ButtonsDiv = styled.div`
   display: flex;
   flex-direction: row;
+`;
+
+const DepositInput = styled.input`
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  width: 175px;
+  padding: 5px;
+  opacity: 0.6;
+  margin: 0 10px;
+`;
+
+const WithdrawInput = styled.input`
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  font-weight: 700;
+  font-size: 18px;
+  width: 175px;
+  padding: 5px;
+  opacity: 0.6;
+  margin: 0 10px;
 `;
 
 const DepositButton = styled.button`

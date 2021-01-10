@@ -22,7 +22,6 @@ const SettingGoalPage = () => {
   const history = useHistory();
   return (
     <Wrapper>
-      <img src={avatarUrl} />
       <Logo />
       <SubHeader>SET A SAVINGS GOAL</SubHeader>
       <Questions>HOW MUCH CAN YOU SAVE EVERY WEEK?</Questions>

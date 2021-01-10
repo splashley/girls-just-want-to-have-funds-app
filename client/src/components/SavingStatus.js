@@ -73,12 +73,6 @@ const SavingStatusPage = () => {
           <DepositInput
             type="number"
             placeholder="$0"
-<<<<<<< HEAD
-            // value={depositAmount}
-            // onChange={(e) => {
-            //   setDepositAmount(e.target.value);
-            // }}
-=======
             onClick={(e) => {
               e.stopPropagation();
             }}
@@ -86,7 +80,6 @@ const SavingStatusPage = () => {
             onChange={(e) => {
               setDepositAmount(e.target.value);
             }}
->>>>>>> parent/main
           />
           DEPOSIT
         </DepositButton>

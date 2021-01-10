@@ -6,6 +6,7 @@ import SubHeader from "./SubHeader";
 import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 import dayjs from "dayjs";
+import PiggyImg from "../assets/piggybank.png";
 
 const SavingStatusPage = () => {
   const {
@@ -32,6 +33,11 @@ const SavingStatusPage = () => {
     <Wrapper>
       <Logo />
       <SubHeader>{userName.toUpperCase()}'S SAVING STATUS</SubHeader>
+      <PiggyWrapper>
+        <Piggy src={PiggyImg} />
+      </PiggyWrapper>{" "}
+      <ProgressBar value="25" max="100"></ProgressBar>
+      {/* <ProgressBar value={amountsaved/goal*100} max="100"></ProgressBar> */}
       <HowMuchDiv>
         <HowMuchDivLeft>
           HOW MUCH YOU'VE SAVED<AmountDiv>${amountsaved}</AmountDiv>
@@ -257,4 +263,20 @@ const TableHeader = styled.th`
 
 const Td = styled.td`
   text-align: center;
+`;
+
+const PiggyWrapper = styled.div`
+  position: relative;
+  width: 100px;
+`;
+const Piggy = styled.img`
+  width: 100px;
+  position: absolute;
+  top: -60px;
+  right: -300px;
+`;
+
+const ProgressBar = styled.progress`
+  width: 500px;
+  height: 50px;
 `;

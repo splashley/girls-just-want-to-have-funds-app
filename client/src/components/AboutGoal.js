@@ -50,6 +50,9 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 60px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -71,6 +74,10 @@ const AvatarSideImg = styled.img`
   padding: 5px 5px 25px 5px;
   height: 400px;
   margin-left: -280px;
+  @media (max-width: 768px) {
+    height: 200px;
+    margin-left: -150px;
+  }
 `;
 
 const Bubble = styled.div`
@@ -83,6 +90,12 @@ const Bubble = styled.div`
   left: 93px;
   z-index: 1;
   width: 300px;
+  @media (max-width: 768px) {
+    width: 130px;
+    font-size: 14px;
+    left: 23px;
+    top: 24%;
+  }
 `;
 
 const Tip = styled.div`
@@ -94,4 +107,9 @@ const Tip = styled.div`
   position: absolute;
   top: 50%;
   left: -18px;
+  @media (max-width: 768px) {
+    height: 20px;
+    width: 20px;
+    left: -8px;
+  }
 `;

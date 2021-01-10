@@ -43,11 +43,19 @@ const Landing = styled.div`
   flex-direction: column;
   height: 100vh;
   align-items: center;
-  justify-content: center;
+  padding: 60px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const AvatarSideImg = styled.img`
   padding: 5px 5px 25px 5px;
   height: 400px;
+  @media (max-width: 768px) {
+    padding: 5px 5px 25px 5px;
+    height: 200px;
+  }
 `;
 export default LandingPage;

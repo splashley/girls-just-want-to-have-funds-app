@@ -85,12 +85,12 @@ const AvatarProvider = () => {
     <>
       <Wrapper>
         <LogoImg />
-        <SubHeader>Create Your Avatar!</SubHeader>
+        <SubHeader>CREATE YOUR AVATAR</SubHeader>
         <WrapperAvatar>
-          <img src={url} alt="user-avatar" />
+          <AvatarImg src={url} alt="user-avatar" />
           <WrapperFeatures>
             <div>
-              Hairstyle:
+              Hairstyle
               <select onChange={changeTopType} value={topType}>
                 <option value="NoHair">No Hair</option>
                 <option value="Eyepatch">Eyepatch</option>
@@ -135,7 +135,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Hair Color:
+              Hair Color
               <select onChange={changeHairColor} value={hairColor}>
                 <option value="Auburn">Auburn</option>
                 <option value="Black">Black</option>
@@ -150,7 +150,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Skin Color:
+              Skin Color
               <select onChange={changeSkinColor} value={skinColor}>
                 <option value="Tanned">Tanned</option>
                 <option value="Yellow">Yellow</option>
@@ -162,7 +162,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Glasses:
+              Glasses
               <select onChange={changeAccessoriesType} value={accessoriesType}>
                 <option value="Blank">Blank</option>
                 <option value="Kurt">Kurt</option>
@@ -174,7 +174,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Eyes:
+              Eyes
               <select onChange={changeEyeType} value={eyeType}>
                 <option value="Default">Default</option>
                 <option value="Close">Close</option>
@@ -191,7 +191,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Eyebrow Type:
+              Eyebrow Type
               <select onChange={changeEyebrowType} value={eyebrowType}>
                 <option value="Angry">Angry</option>
                 <option value="AngryNatural">Angry Natural</option>
@@ -208,7 +208,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Mouth Type:
+              Mouth Type
               <select onChange={changeMouthType} value={mouthType}>
                 <option value="Concerned">Concerned</option>
                 <option value="Default">Default</option>
@@ -224,7 +224,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Outfit Type:
+              Outfit Type
               <select onChange={changeClotheType} value={clotheType}>
                 <option value="BlazerShirt">Blazer Shirt</option>
                 <option value="BlazerSweater">Blazer Sweater</option>
@@ -237,7 +237,7 @@ const AvatarProvider = () => {
               </select>
             </div>
             <div>
-              Outfit Color:
+              Outfit Color
               <select onChange={changeClotheColor} value={clotheColor}>
                 <option value="Black">Black</option>
                 <option value="Gray01">Gray Tone 1</option>
@@ -265,20 +265,49 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 60px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const WrapperAvatar = styled.div`
   margin-top: 20px;
   display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+const AvatarImg = styled.img`
+  @media (max-width: 768px) {
+    max-width: 200px;
+    margin: -20px auto 30px auto;
+  }
 `;
 
 const WrapperFeatures = styled.div`
-  font-size: 25px;
+  font-size: 16px;
+  text-align: right;
 
   & select {
-    padding: 10px;
+    padding: 5px;
+    margin: 5px;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    text-align: left;
+    & select {
+      padding: 5px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
   }
 `;
 

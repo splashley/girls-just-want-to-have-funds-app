@@ -62,6 +62,9 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 60px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const Input = styled.input`
@@ -78,10 +81,17 @@ const Input = styled.input`
   ::placeholder {
     color: pink;
   }
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 200px;
+  }
 `;
 
 const Questions = styled.div`
   padding: 25px 0 10px 0;
   font-size: 18px;
   font-weight: 700;
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 `;

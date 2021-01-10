@@ -47,6 +47,9 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 60px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const GridWrapper = styled.div`
@@ -60,12 +63,20 @@ const GridWrapper = styled.div`
 const ParagraphWrapper = styled.div`
   margin-top: 30px;
   padding: 0 400px;
+  @media (max-width: 768px) {
+    padding: 25px;
+    margin-top: 0;
+  }
 `;
 
 const Paragraph = styled.p`
   font-size: 18px;
   line-height: 1.5;
   text-align: justify;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    margin-top: 0;
+  }
 `;
 
 const AvatarSection = styled.div`
@@ -78,6 +89,10 @@ const AvatarSideImg = styled.img`
   padding: 5px 5px 25px 5px;
   height: 300px;
   margin-left: -280px;
+  @media (max-width: 768px) {
+    height: 200px;
+    margin-left: -150px;
+  }
 `;
 
 const Bubble = styled.div`
@@ -90,6 +105,11 @@ const Bubble = styled.div`
   left: 5px;
   z-index: 1;
   width: 300px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    padding: 5px;
+    width: 150px;
+  }
 `;
 
 const Tip = styled.div`
@@ -101,4 +121,9 @@ const Tip = styled.div`
   position: absolute;
   top: 50%;
   left: -18px;
+  @media (max-width: 768px) {
+    height: 20px;
+    width: 20px;
+    left: -8px;
+  }
 `;

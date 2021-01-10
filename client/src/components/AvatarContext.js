@@ -87,7 +87,7 @@ const AvatarProvider = () => {
         <LogoImg />
         <SubHeader>CREATE YOUR AVATAR</SubHeader>
         <WrapperAvatar>
-          <img src={url} alt="user-avatar" />
+          <AvatarImg src={url} alt="user-avatar" />
           <WrapperFeatures>
             <div>
               Hairstyle
@@ -266,11 +266,26 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 60px;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const WrapperAvatar = styled.div`
   margin-top: 20px;
   display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+`;
+
+const AvatarImg = styled.img`
+  @media (max-width: 768px) {
+    max-width: 200px;
+    margin: -20px auto 30px auto;
+  }
 `;
 
 const WrapperFeatures = styled.div`
@@ -282,6 +297,17 @@ const WrapperFeatures = styled.div`
     margin: 5px;
     border-radius: 5px;
     font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    text-align: left;
+    & select {
+      padding: 5px;
+      margin: 5px;
+      border-radius: 5px;
+      font-size: 14px;
+    }
   }
 `;
 

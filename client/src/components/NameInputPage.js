@@ -33,6 +33,9 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 60px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const Input = styled.input`
@@ -45,4 +48,7 @@ const Input = styled.input`
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 300px;
+  }
 `;

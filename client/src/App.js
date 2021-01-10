@@ -10,6 +10,7 @@ import AvatarImg from "./assets/avatar.png";
 import Page2 from "./components/page2";
 import Page3 from "./components/page3";
 import SettingGoalPage from "./components/settingGoalPage";
+import AboutGoal from "./components/AboutGoal";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path="/settinggoalpage">
           <SettingGoalPage />
+        </Route>
+        <Route path="/aboutGoal">
+          <AboutGoal />
         </Route>
         <Route path="/avatar">
           <AvatarProvider />

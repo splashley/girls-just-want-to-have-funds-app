@@ -1,11 +1,13 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import MainButton from "./buttons/mainButton";
 import Logo from "./logo";
 import SubHeader from "./SubHeader";
 import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 import AvatarImg from "../assets/avatar.png";
+import ButtonWrapper from "./buttonWrapper";
+
 const Page3 = () => {
   const { userName, setUserName } = React.useContext(UserInfoContext);
   const history = useHistory();
@@ -16,11 +18,12 @@ const Page3 = () => {
       <GridWrapper>
         <ParagraphWrapper>
           <Paragraph>
-            <b>Savings:</b> Let's say your parents give you a 10 dollar
-            allowance every week for doing the chores around the house. Those 10
-            dollars are what we call your <b>income</b>. Now, you've had your
-            eye on the new Feline Festival game and you've been putting aside
-            your allowance for it. That money you've put aside is your savings.
+            <strong>Savings:</strong> Let's say your parents give you a 10
+            dollar allowance every week for doing the chores around the house.
+            Those 10 dollars are what we call your <strong>income</strong>. Now,
+            you've had your eye on the new Feline Festival game and you've been
+            putting aside your allowance for it. That money you've put aside is
+            your <strong>savings</strong>.
           </Paragraph>
         </ParagraphWrapper>
         <AvatarSection>
@@ -28,11 +31,13 @@ const Page3 = () => {
 
           <Bubble>
             <Tip />
-            My <b>income</b> is 15 bucks a week. I have been saving for two
-            weeks so I have 30 dollars in <b>savings</b> YAAY !
+            My <strong>income</strong> is 15 bucks a week. I have been saving
+            for two weeks so I have 30 dollars in <strong>savings</strong> YAAY
+            !
           </Bubble>
         </AvatarSection>
       </GridWrapper>
+      <ButtonWrapper />
     </Wrapper>
   );
 };
@@ -47,38 +52,43 @@ const Wrapper = styled.div`
 `;
 
 const GridWrapper = styled.div`
-  grid-template-columns: 1fr 1fr;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 70px;
+  vertical-align: baseline;
 `;
 
 const ParagraphWrapper = styled.div`
-  padding-right: 60px;
   margin-top: 30px;
+  padding: 0 400px;
 `;
 
 const Paragraph = styled.p`
-  font-size: 25px;
-  line-height: 2;
+  font-size: 20px;
+  line-height: 1.5;
   text-align: justify;
 `;
 
 const AvatarSection = styled.div`
   position: relative;
+  text-align: center;
 `;
 const AvatarSideImg = styled.img`
   padding: 5px 5px 25px 5px;
   height: 400px;
+  margin-left: -280px;
 `;
 
 const Bubble = styled.div`
   border-radius: 9px;
   background: white;
-  font-size: 25px;
+  font-size: 20px;
   padding: 15px;
-  max-width: 320px;
+  max-width: 280px;
   position: absolute;
   top: 30%;
-  left: 350px;
+  left: 850px;
   z-index: 1;
 `;
 

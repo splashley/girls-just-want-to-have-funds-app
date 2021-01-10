@@ -1,15 +1,13 @@
 import React, { createContext, useEffect, useState } from "react";
 import styled from "styled-components";
-import MainButton from "./buttons/mainButton";
 import SubHeader from "./SubHeader";
-import { useHistory } from "react-router-dom";
 import useStickyState from "../useLocalStorageHook";
-import buttonWrapper from "./buttonWrapper";
 import ButtonWrapper from "./buttonWrapper";
+import LogoImg from "../components/logo";
+
 import { UserInfoContext } from "../UserInfoContext";
 
 const AvatarProvider = () => {
-  const history = useHistory();
   const { setAvatarUrl } = React.useContext(UserInfoContext);
   //Features useState
   const [topType, setTopType] = useStickyState("LongHairMiaWallace", "topType");
@@ -86,6 +84,7 @@ const AvatarProvider = () => {
   return (
     <>
       <Wrapper>
+        <LogoImg />
         <SubHeader>Create Your Avatar!</SubHeader>
         <WrapperAvatar>
           <img src={url} alt="user-avatar" />
@@ -262,13 +261,15 @@ const AvatarProvider = () => {
   );
 };
 const Wrapper = styled.div`
-  margin: 50px 150px 0px 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 const WrapperAvatar = styled.div`
   margin-top: 20px;
   display: flex;
-  justify-content: space-around;
 `;
 
 const WrapperFeatures = styled.div`
@@ -279,13 +280,6 @@ const WrapperFeatures = styled.div`
     border-radius: 5px;
     font-size: 20px;
   }
-`;
-
-const WrapperButton = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 20px;
 `;
 
 export default AvatarProvider;

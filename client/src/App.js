@@ -42,7 +42,7 @@ function App() {
         <Route path="/avatar">
           <AvatarProvider />
         </Route>
-        <Route path="/savingStatus">
+        <Route path="/savingstatus">
           <SavingStatusPage />
         </Route>
       </Switch>

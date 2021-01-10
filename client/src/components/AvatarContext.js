@@ -4,6 +4,8 @@ import MainButton from "./buttons/mainButton";
 import SubHeader from "./SubHeader";
 import { useHistory } from "react-router-dom";
 import useStickyState from "../useLocalStorageHook";
+import buttonWrapper from "./buttonWrapper";
+import ButtonWrapper from "./buttonWrapper";
 
 const AvatarProvider = () => {
   const history = useHistory();
@@ -249,24 +251,7 @@ const AvatarProvider = () => {
             </div>
           </WrapperFeatures>
         </WrapperAvatar>
-
-        <WrapperButton>
-          <MainButton
-            onClick={() => {
-              history.push("/settinggoalpage");
-            }}
-          >
-            BACK
-          </MainButton>
-
-          <MainButton
-            onClick={() => {
-              history.push("/??");
-            }}
-          >
-            NEXT
-          </MainButton>
-        </WrapperButton>
+        <ButtonWrapper nextLink="/learnaboutmoney" />
       </Wrapper>
     </>
   );

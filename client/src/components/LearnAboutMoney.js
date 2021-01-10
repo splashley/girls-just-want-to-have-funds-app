@@ -37,7 +37,7 @@ const LearnAboutMoneyPage = () => {
           </Bubble>
         </AvatarSection>
       </GridWrapper>
-      <ButtonWrapper nextLink="/aboutgoal" />
+      <ButtonWrapper nextLink="/settinggoalpage" />
     </Wrapper>
   );
 };

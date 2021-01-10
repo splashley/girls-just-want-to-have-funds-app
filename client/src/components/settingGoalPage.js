@@ -49,7 +49,7 @@ const SettingGoalPage = () => {
           setGoal(e.target.value);
         }}
       ></Input>
-      <ButtonWrapper />
+      <ButtonWrapper nextLink="/aboutgoal" />
     </Wrapper>
   );
 };

@@ -24,7 +24,7 @@ const AboutGoal = () => {
         <b>{Math.ceil(amountToSave / allowance)} weeks </b> to reach your goal
         of {goal}.
       </Paragraph>
-      <ButtonWrapper />
+      <ButtonWrapper nextLink="/savingstatus" />
     </Wrapper>
   );
 };

@@ -17,10 +17,12 @@ const SettingGoalPage = () => {
     setAmountToSave,
     goal,
     setGoal,
+    avatarUrl,
   } = React.useContext(UserInfoContext);
   const history = useHistory();
   return (
     <Wrapper>
+      <img src={avatarUrl} />
       <Logo />
       <SubHeader>SET A SAVINGS GOAL</SubHeader>
       <Questions>HOW MUCH CAN YOU SAVE EVERY WEEK?</Questions>

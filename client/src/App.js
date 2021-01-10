@@ -13,6 +13,7 @@ import SettingGoalPage from "./components/settingGoalPage";
 import AboutGoal from "./components/AboutGoal";
 import { useHistory } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
+import SavingStatusPage from "./components/savingStatus";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
@@ -37,6 +38,12 @@ function App() {
         </Route>
         <Route path="/aboutgoal">
           <AboutGoal />
+        </Route>
+        <Route path="/avatar">
+          <AvatarProvider />
+        </Route>
+        <Route path="/savingStatus">
+          <SavingStatusPage />
         </Route>
       </Switch>
       <GlobalStyles />

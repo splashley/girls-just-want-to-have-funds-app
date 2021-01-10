@@ -39,9 +39,6 @@ function App() {
         <Route path="/aboutgoal">
           <AboutGoal />
         </Route>
-        <Route path="/avatar">
-          <AvatarProvider />
-        </Route>
         <Route path="/savingstatus">
           <SavingStatusPage />
         </Route>

@@ -153,7 +153,13 @@ const SavingStatusPage = () => {
           </TableRow>
         </Table>
       </TableDiv>
-      <MainButton>BACK</MainButton>
+      <MainButton
+        onClick={() => {
+          history.goBack();
+        }}
+      >
+        BACK
+      </MainButton>
     </Wrapper>
   );
 };

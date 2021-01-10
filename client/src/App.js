@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import React from "react";
 import { UserInfoContext } from "./UserInfoContext";
 import GlobalStyles from "./GlobalStyles";
-import AvatarProvider from "./components/Avatar/AvatarContext";
+import AvatarProvider from "./components/AvatarContext";
 import MainButton from "./components/buttons/mainButton";
 import styled from "styled-components/macro";
 import LogoImg from "./components/logo";

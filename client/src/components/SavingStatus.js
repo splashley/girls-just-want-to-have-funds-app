@@ -5,6 +5,7 @@ import Logo from "./logo";
 import SubHeader from "./SubHeader";
 import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
+import dayjs from "dayjs";
 import PiggyImg from "../assets/piggybank.png";
 
 const SavingStatusPage = () => {
@@ -19,9 +20,15 @@ const SavingStatusPage = () => {
     setGoal,
     amountsaved,
     setAmountSaved,
+    ledger,
+    setLedger,
   } = React.useContext(UserInfoContext);
+  const [depositAmount, setDepositAmount] = React.useState("");
+  const [withdrawAmount, setWithdrawAmount] = React.useState("");
+  console.log("amountsaved", amountsaved);
+  console.log("depositAmount", depositAmount);
   const history = useHistory();
-
+  console.log(dayjs().format("YYYY/MM/DD HH:mm"));
   return (
     <Wrapper>
       <Logo />
@@ -37,23 +44,75 @@ const SavingStatusPage = () => {
         </HowMuchDivLeft>
         <HowMuchDivRight>
           HOW MUCH IS REMAINING
-          <AmountDiv>${amountToSave - amountsaved}</AmountDiv>
+          <AmountDiv>
+            ${amountToSave - amountsaved >= 0 ? amountToSave - amountsaved : 0}
+          </AmountDiv>
         </HowMuchDivRight>
       </HowMuchDiv>
       <ButtonsDiv>
-        <DepositButton>
+        <DepositButton
+          onClick={() => {
+            const numberSaved = amountsaved === "" ? 0 : parseInt(amountsaved);
+            const depositSaved =
+              depositAmount === "" ? 0 : parseInt(depositAmount);
+            const total = depositSaved + numberSaved;
+
+            setAmountSaved(total);
+
+            const object = {
+              date: dayjs().format("YYYY/MM/DD HH:mm"),
+              total: total,
+              deposit: depositAmount,
+              withdraw: "none",
+            };
+            const array = [...ledger, object];
+            setLedger(array);
+          }}
+        >
           +
           <DepositInput
+            type="number"
             placeholder="$0"
-            // value={depositAmount}
-            // onChange={(e) => {
-            //   setDepositAmount(e.target.value);
-            // }}
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            value={depositAmount}
+            onChange={(e) => {
+              setDepositAmount(e.target.value);
+            }}
           />
           DEPOSIT
         </DepositButton>
-        <WithdrawButton>
-          -<WithdrawInput placeholder="$0" />
+        <WithdrawButton
+          onClick={() => {
+            const numberSaved = amountsaved === "" ? 0 : parseInt(amountsaved);
+            const withdrawSaved =
+              withdrawAmount === "" ? 0 : parseInt(withdrawAmount);
+            const total = numberSaved - withdrawSaved;
+            setAmountSaved(total);
+
+            const object = {
+              date: dayjs().format("YYYY/MM/DD HH:mm"),
+              total: total,
+              deposit: "none",
+              withdraw: withdrawAmount,
+            };
+            const array = [...ledger, object];
+            setLedger(array);
+          }}
+        >
+          -
+          <WithdrawInput
+            type="number"
+            placeholder="$0"
+            onClick={(e) => {
+              e.stopPropagation();
+            }}
+            value={withdrawAmount}
+            onChange={(e) => {
+              setWithdrawAmount(e.target.value);
+            }}
+          />
           WITHDRAW
         </WithdrawButton>
       </ButtonsDiv>
@@ -65,6 +124,18 @@ const SavingStatusPage = () => {
             <TableHeader>WITHDRAWALS</TableHeader>
             <TableHeader>TOTAL</TableHeader>
           </TableRow>
+          {ledger
+            .map((entrie) => {
+              return (
+                <TableRow>
+                  <Td>{entrie.date}</Td>
+                  <Td>{entrie.deposit}</Td>
+                  <Td>{entrie.withdraw}</Td>
+                  <Td>{entrie.total}</Td>
+                </TableRow>
+              );
+            })
+            .reverse()}
           <TableRow>
             <td></td>
             <td></td>
@@ -188,6 +259,10 @@ const TableRow = styled.tr`
 
 const TableHeader = styled.th`
   padding: 10px;
+`;
+
+const Td = styled.td`
+  text-align: center;
 `;
 
 const PiggyWrapper = styled.div`

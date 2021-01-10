@@ -7,6 +7,7 @@ import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 import dayjs from "dayjs";
 import PiggyImg from "../assets/piggybank.png";
+import { FcOk } from "react-icons/fc";
 
 const SavingStatusPage = () => {
   const {
@@ -39,6 +40,11 @@ const SavingStatusPage = () => {
         value={(amountsaved / amountToSave) * 100}
         max="100"
       ></ProgressBar>
+      {(amountsaved / amountToSave) * 100 >= 100 && (
+        <h2>
+          GOAL COMPLETED! <FcOk size={23} />
+        </h2>
+      )}
       <HowMuchDiv>
         <HowMuchDivLeft>
           HOW MUCH YOU'VE SAVED<AmountDiv>${amountsaved}</AmountDiv>

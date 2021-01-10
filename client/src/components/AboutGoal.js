@@ -8,8 +8,13 @@ import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
 
 const AboutGoal = () => {
-  const { allowance, amountToSave, goal } = React.useContext(UserInfoContext);
+  const { allowance, amountToSave, goal, setHasAccount } = React.useContext(
+    UserInfoContext
+  );
   const history = useHistory();
+  React.useEffect(() => {
+    setHasAccount(true);
+  }, []);
   return (
     <Wrapper>
       <Logo />
@@ -19,7 +24,7 @@ const AboutGoal = () => {
         <b>{Math.ceil(amountToSave / allowance)} weeks </b> to reach your goal
         of {goal}.
       </Paragraph>
-      <ButtonWrapper />
+      <ButtonWrapper nextLink="/savingstatus" />
     </Wrapper>
   );
 };

@@ -7,40 +7,39 @@ import MainButton from "./components/buttons/mainButton";
 import styled from "styled-components/macro";
 import LogoImg from "./components/logo";
 import AvatarImg from "./assets/avatar.png";
-import Page2 from "./components/page2";
-import Page3 from "./components/page3";
+import NameInputPage from "./components/NameInputPage";
+import LearnAboutMoneyPage from "./components/LearnAboutMoney";
 import SettingGoalPage from "./components/settingGoalPage";
 import AboutGoal from "./components/AboutGoal";
+import { useHistory } from "react-router-dom";
+import LandingPage from "./components/LandingPage";
 import SavingStatusPage from "./components/savingStatus";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);
+
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Landing>
-            <LogoImg />
-            <AvatarSideImg src={AvatarImg} />
-            <MainButton>LET'S START !</MainButton>
-          </Landing>
+          <LandingPage />
         </Route>
-        <Route path="/page2">
-          <Page2 />
-        </Route>
-        <Route path="/page3">
-          <Page3 />
-        </Route>
-        <Route path="/settinggoalpage">
-          <SettingGoalPage />
-        </Route>
-        <Route path="/aboutGoal">
-          <AboutGoal />
+        <Route path="/nameinput">
+          <NameInputPage />
         </Route>
         <Route path="/avatar">
           <AvatarProvider />
         </Route>
-        <Route path="/savingStatus">
+        <Route path="/learnaboutmoney">
+          <LearnAboutMoneyPage />
+        </Route>
+        <Route path="/settinggoalpage">
+          <SettingGoalPage />
+        </Route>
+        <Route path="/aboutgoal">
+          <AboutGoal />
+        </Route>
+        <Route path="/savingstatus">
           <SavingStatusPage />
         </Route>
       </Switch>

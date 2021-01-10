@@ -25,10 +25,9 @@ const SavingStatusPage = () => {
   } = React.useContext(UserInfoContext);
   const [depositAmount, setDepositAmount] = React.useState("");
   const [withdrawAmount, setWithdrawAmount] = React.useState("");
-  console.log("amountsaved", amountsaved);
-  console.log("depositAmount", depositAmount);
+
   const history = useHistory();
-  console.log(dayjs().format("YYYY/MM/DD HH:mm"));
+
   return (
     <Wrapper>
       <Logo />
@@ -36,7 +35,6 @@ const SavingStatusPage = () => {
       <PiggyWrapper>
         <Piggy src={PiggyImg} />
       </PiggyWrapper>{" "}
-      {/* <ProgressBar value="25" max="100"></ProgressBar> */}
       <ProgressBar
         value={(amountsaved / amountToSave) * 100}
         max="100"
@@ -66,7 +64,7 @@ const SavingStatusPage = () => {
               date: dayjs().format("YYYY/MM/DD HH:mm"),
               total: total,
               deposit: depositAmount,
-              withdraw: "none",
+              withdraw: "",
             };
             const array = [...ledger, object];
             setLedger(array);
@@ -93,11 +91,10 @@ const SavingStatusPage = () => {
               withdrawAmount === "" ? 0 : parseInt(withdrawAmount);
             const total = numberSaved - withdrawSaved;
             setAmountSaved(total);
-
             const object = {
               date: dayjs().format("YYYY/MM/DD HH:mm"),
               total: total,
-              deposit: "none",
+              deposit: "",
               withdraw: withdrawAmount,
             };
             const array = [...ledger, object];
@@ -165,6 +162,8 @@ const Wrapper = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 60px;
+  @media (max-width: 768px) {
+    padding: 20px;
 `;
 
 const HowMuchDiv = styled.div`
@@ -173,7 +172,11 @@ const HowMuchDiv = styled.div`
   flex-direction: row;
   padding: 30px 60px;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 14px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 15px;
+  }
 `;
 
 const HowMuchDivLeft = styled.div`
@@ -213,6 +216,11 @@ const DepositInput = styled.input`
   width: 100px;
   padding: 5px;
   margin: 0 10px;
+  @media (max-width: 768px) {
+    width: 70px;
+    height: 30px;
+    margin: 2px 10px 10px 10px;
+  }
 `;
 
 const WithdrawInput = styled.input`
@@ -224,6 +232,11 @@ const WithdrawInput = styled.input`
   width: 100px;
   padding: 5px;
   margin: 0 10px;
+  @media (max-width: 768px) {
+    width: 70px;
+    height: 30px;
+    margin: 2px 10px 10px 10px;
+  }
 `;
 
 const DepositButton = styled.button`
@@ -236,6 +249,11 @@ const DepositButton = styled.button`
   padding: 5px;
   opacity: 0.8;
   margin: 0 10px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 100px;
+    padding: 5px;
+  }
 `;
 
 const WithdrawButton = styled.button`
@@ -248,30 +266,55 @@ const WithdrawButton = styled.button`
   padding: 5px;
   opacity: 0.8;
   margin: 0 10px;
+  @media (max-width: 768px) {
+    font-size: 14px;
+    width: 100px;
+    padding: 5px;
+  }
 `;
 
 const TableDiv = styled.div`
   background-color: white;
   width: 600px;
   margin: 30px 0;
+  border-radius: 10px;
+  @media (max-width: 768px) {
+    width: 320px;
+    margin: 20px 0;
+    border-radius: 20px;
+  }
 `;
 
 const Table = styled.table`
   border: 2px solid #febdc6;
   width: 100%;
   font-size: 18px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const TableRow = styled.tr`
   padding: 10px;
+  border: 2px solid #fee4e8;
+  @media (max-width: 768px) {
+    border: 1px solid #fee4e8;
+  }
 `;
 
 const TableHeader = styled.th`
   padding: 10px;
+  background-color: #fee4e8;
 `;
 
 const Td = styled.td`
   text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 10px;
+    padding: 1px 5px;
+  }
 `;
 
 const PiggyWrapper = styled.div`
@@ -283,9 +326,18 @@ const Piggy = styled.img`
   position: absolute;
   top: -60px;
   right: -300px;
+  @media (max-width: 768px) {
+    right: -80px;
+    width: 50px;
+    top: -20px;
+  }
 `;
 
 const ProgressBar = styled.progress`
   width: 500px;
   height: 50px;
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 25px;
+  }
 `;

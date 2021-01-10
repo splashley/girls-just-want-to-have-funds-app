@@ -70,6 +70,7 @@ const Input = styled.input`
   border-radius: 8px;
   height: 30px;
   margin-bottom: 15px;
+  padding: 20px;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -80,6 +81,7 @@ const Input = styled.input`
 `;
 
 const Questions = styled.div`
-  padding: 5px;
-  font-weight: 600;
+  padding: 25px 0 10px 0;
+  font-size: 18px;
+  font-weight: 700;
 `;

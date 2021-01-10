@@ -43,7 +43,7 @@ const Landing = styled.div`
   flex-direction: column;
   height: 100vh;
   align-items: center;
-  justify-content: center;
+  padding: 60px;
 `;
 
 const AvatarSideImg = styled.img`

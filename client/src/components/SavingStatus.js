@@ -47,7 +47,11 @@ const SavingStatusPage = () => {
             placeholder="$0"
             // value={depositAmount}
             // onChange={(e) => {
+<<<<<<< HEAD
             //   setDepositAmoun(e.target.value);
+=======
+            //   setDepositAmount(e.target.value);
+>>>>>>> parent/main
             // }}
           />
           DEPOSIT

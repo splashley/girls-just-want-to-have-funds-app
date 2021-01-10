@@ -63,7 +63,7 @@ const ParagraphWrapper = styled.div`
 `;
 
 const Paragraph = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.5;
   text-align: justify;
 `;
@@ -76,7 +76,7 @@ const AvatarSection = styled.div`
 
 const AvatarSideImg = styled.img`
   padding: 5px 5px 25px 5px;
-  height: 400px;
+  height: 300px;
   margin-left: -280px;
 `;
 
@@ -87,7 +87,7 @@ const Bubble = styled.div`
   padding: 15px;
   position: absolute;
   top: 34%;
-  left: 93px;
+  left: 5px;
   z-index: 1;
   width: 300px;
 `;

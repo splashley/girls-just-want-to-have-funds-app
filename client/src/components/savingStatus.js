@@ -5,6 +5,7 @@ import Logo from "./logo";
 import SubHeader from "./SubHeader";
 import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 const SavingStatusPage = () => {
   const {
@@ -24,7 +25,7 @@ const SavingStatusPage = () => {
   return (
     <Wrapper>
       <Logo />
-      <SubHeader>{userName.toUpperCase()}'s SAVING STATUS</SubHeader>
+      <SubHeader>{userName.toUpperCase()}'S SAVING STATUS</SubHeader>
       <HowMuchDiv>
         <HowMuchDivLeft>
           HOW MUCH YOU'VE SAVED<AmountDiv>$0</AmountDiv>

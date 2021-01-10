@@ -13,7 +13,7 @@ import SettingGoalPage from "./components/settingGoalPage";
 import AboutGoal from "./components/AboutGoal";
 import { useHistory } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import SavingStatusPage from "./components/savingStatus";
+import SavingStatusPage from "./components/SavingStatus";
 
 function App() {
   const { test } = React.useContext(UserInfoContext);

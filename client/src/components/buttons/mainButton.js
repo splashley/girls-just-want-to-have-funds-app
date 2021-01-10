@@ -22,6 +22,13 @@ const Wrapper = styled.button`
   :hover {
     transform: scale(1.1);
   }
+  @media (max-width: 768px) {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
 `;
 
 export default MainButton;

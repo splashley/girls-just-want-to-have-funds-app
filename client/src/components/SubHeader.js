@@ -15,4 +15,13 @@ const SubHeaderWrapper = styled.div`
   margin-bottom: 20px;
   font-weight: bold;
   letter-spacing: 2px;
+  @media (max-width: 768px) {
+    border-bottom: 20px solid white;
+    font-size: 20px;
+    height: 35px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
 `;

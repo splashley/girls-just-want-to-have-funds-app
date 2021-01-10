@@ -32,4 +32,9 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;

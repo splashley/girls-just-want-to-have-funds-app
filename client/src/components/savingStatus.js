@@ -5,7 +5,6 @@ import Logo from "./logo";
 import SubHeader from "./SubHeader";
 import { UserInfoContext } from "../UserInfoContext";
 import { useHistory } from "react-router-dom";
-import moment from "moment";
 
 const SavingStatusPage = () => {
   const {

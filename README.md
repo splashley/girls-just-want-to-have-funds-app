@@ -1,4 +1,4 @@
-##React based application with Avatar API and styled-components
+## React based application with Avatar API and styled-components
 Friendly introduction to finance for girls between the age of 10-15
 
 ## What it does:
